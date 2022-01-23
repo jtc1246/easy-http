@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='myHttp',
-    version='0.9.2',
+    version='0.9.4',
     author='Tiancheng Jiao',
     author_email='jtc1246@outlook.com',
     url='https://github.com/jtc1246/myHttp',
@@ -16,6 +16,8 @@ setup(
         'console_scripts': [
             'http=myHttp:http',
             'testInternet=myHttp:testInternet',
+            'setDefaultTestingUrl=myHttp:setDefaultTestingUrl',
+            'setDefaultTimeout=myHttp:setDefaultTimeout'
         ]
     }
 )

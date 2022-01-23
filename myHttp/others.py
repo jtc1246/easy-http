@@ -3,7 +3,6 @@ import json
 
 
 def getTime():
-    global globalVar
     t = time.time()
     t = int(1000 * t)
     return t
