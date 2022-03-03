@@ -1,12 +1,14 @@
 # MyHttp
 
-## 1. Usage
+## 1. Usage / 使用方式
 
 (1) http(url:str,Method:str="GET",Header:dict={},Timeout:int=None,ToJson:bool=True,Body:str="",Decode:bool=True)
 
     url: need to begin with 'http://' or 'https://' / 需要带有 'http://' 或 'https://'
     Timeout: unit ms, default value is 2000ms. You can also set default timeout with setDefaultTimeout() / 单位为毫秒，默认为2000毫秒。可以通过setDefaultTimeout()修改默认值。
-    Return value: dict, it has four keys: status, code,header, text, extra
+    
+    Return value: dict, it has five keys: status, code, header, text, extra
+    返回值为 dict, 其中有 5 个 key: status, code, header, text, extra
     
     Status:
     -1: 无网络 / No Internet Connection
@@ -27,7 +29,7 @@
     extra: when status is 1, the binary text will be stored in extra; when status is 2, the original text will be stored in extra. In other cases, it will be ''
     status 为 1 时, 会将二进制信息储存在 extra 中, status 为 2 时, 会将原始字符串储存在 extra 中, 其它情况为空字符串。
 
-(2) testIInternet()
+(2) testInternet()
     
     Return 0 when there is Internet connection; return -1 when there is no Internet connection.
     如果有网络连接, 返回 0; 如果没有网络连接, 返回 -1
@@ -35,5 +37,12 @@
     Default testing url is 'https://apple.com' / 默认测试链接为 'https://apple.com'
     You can change default testing url through setDefaultTestingUrl() / 可通过 setDefaultTestingUrl() 修改默认测试链接
     
-
+## 2. Install / 安装
     
+    pip3 install myHttp
+
+## 3. Other notification / 其它说明
+
+    Emial / 邮箱: jtc1246@outlook.com
+    License: GPL v2
+    Requirement / 要求: Python 3
