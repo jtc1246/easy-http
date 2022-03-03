@@ -16,6 +16,11 @@ def setDefaultTestingUrl(url:str):
     useDefaultTestingUrl=False
 
 def testInternet():
+    '''
+    Return 0 when there is Internet connection; return -1 when there is no Internet connection.
+
+    如果有网络连接, 返回 0; 如果没有网络连接, 返回 -1
+    '''
     global defaultTestingUrl,useDefaultTestingUrl
     http1=urllib3.PoolManager()
     dic={True:3,False:1}
@@ -27,17 +32,17 @@ def testInternet():
 
 def http(url:str,Method:str="GET",Header:dict={},Timeout:int=None,ToJson:bool=True,Body:str="",Decode:bool=True):
     '''
-    About Timeout:
+    About Timeout / 关于 Timeout:
         Default timeout is 2000ms.
         If the paramater Timeout is None, it will use dafault timeout.
         If you want to specify a timeout, just give a value to Timeout, unit is ms.
-        You can set default timeout by using 
+        You can set default timeout by using setDefaultTimeout()
     
     关于 status / About status:
         -1: 无网络 / No Internet Connection
         -2: 超时 / Timeout
         -3: 域名不存在 / Domian not exists
-        -4: 其它问题, 主要是代理服务器设置错误 / Other problen, mainly proxy server error
+        -4: 其它问题, 主要是代理服务器设置错误 / Other problem, mainly proxy server error
 
         1: 不是 UTF-8 编码, text 返回空字符串 / Not UTF-8 encode, the return value of text will be empty str
         2: 不是 Json 格式(在 toJSON=True 的前提下) / Not in Json format (when toJSON=True)
