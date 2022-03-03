@@ -15,7 +15,7 @@
     -4: 其它问题, 主要是代理服务器设置错误 / Other problem, mainly proxy server error
     1: 不是 UTF-8 编码, text 返回空字符串 / Not UTF-8 encode, the return value of text will be empty str
     2: 不是 Json 格式(在 toJSON=True 的前提下) / Not in Json format (when toJSON=True)
-    3: 对方网站不支持https, 但是却使用了https连接, 这种情况会自动切换为http连接, 若此次status不为0, 返回该status, 若为0, 返回3 / 
+    3: 对方网站不支持https, 但是却使用了https连接, 这种情况会自动切换为http连接, 若此次status不为0, 返回该status, 若为0, 返回3
     The website does not support https. It will change to http automatically in this situation. If the status this time is 0, the status will be 3. If not 0, it will return this status.
     
     Code: Http status code / Http 状态码
@@ -25,7 +25,7 @@
     text: response body
     
     extra: when status is 1, the binary text will be stored in extra; when status is 2, the original text will be stored in extra. In other cases, it will be ''
-    / status 为 1 时, 会将二进制信息储存在 extra 中, status 为 2 时, 会将原始字符串储存在 extra 中, 其它情况为空字符串。
+    status 为 1 时, 会将二进制信息储存在 extra 中, status 为 2 时, 会将原始字符串储存在 extra 中, 其它情况为空字符串。
 
 (2) testIInternet()
     
