@@ -29,7 +29,7 @@
 
 (2) testIInternet()
     
-    Return 0 when there is Internet connection; return -1 when there is no Internet connection. /
+    Return 0 when there is Internet connection; return -1 when there is no Internet connection.
     如果有网络连接, 返回 0; 如果没有网络连接, 返回 -1
     
     Default testing url is 'https://apple.com' / 默认测试链接为 'https://apple.com'
