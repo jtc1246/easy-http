@@ -1,4 +1,4 @@
-# MyHttp
+# MyHttp v1.0.0
 
 ## 1. Usage / 使用方式
 
