@@ -84,7 +84,7 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=None,ToJson:bool=Tr
     except exceptions.SSLError: # 对方网站不支持https, 但是却使用了https连接
         n=backup[0].find('https://')
         newUrl='http://'+backup[0][n+8:]
-        tryAgain=http(newUrl,Method=backup[1],Header=backup[2],Timeout=backup[3],ToJson=backup[4],BODY=backup[5],Decode=backup[6])
+        tryAgain=http(newUrl,Method=backup[1],Header=backup[2],Timeout=backup[3],ToJson=backup[4],Body=backup[5],Decode=backup[6])
         if(tryAgain['status']==0):
             tryAgain['status']=3
         return tryAgain

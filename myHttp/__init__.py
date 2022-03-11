@@ -8,10 +8,10 @@ __all__=[
 ]
 
 
-__version__='1.0.0'
+__version__='1.0.1'
 __license__='GPL-2.0 License'
 __author__='Tiancheng Jiao'
-__github__='https://github.com/jtc1246/easy-http'
+__url__='https://github.com/jtc1246/easy-http'
 __author_email__='jtc1246@outlook.com'
 __description__='A very easy http tool'
 
