@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='myHttp',
-    version='1.1.0',
+    version='1.1.1',
     author='Tiancheng Jiao',
     author_email='jtc1246@outlook.com',
     url='https://github.com/jtc1246/myHttp',
@@ -12,13 +12,13 @@ setup(
     python_requires='>=3',
     platforms=["all"],
     license='GPL-2.0 License',
-    entry_points={
-        'console_scripts': [
-            'http=myHttp:http',
-            'testInternet=myHttp:testInternet',
-            'setDefaultTestingUrl=myHttp:setDefaultTestingUrl',
-            'setDefaultTimeout=myHttp:setDefaultTimeout'
-        ]
-    }
+    # entry_points={
+    #     'console_scripts': [
+    #         'http=myHttp:http',
+    #         'testInternet=myHttp:testInternet',
+    #         'setDefaultTestingUrl=myHttp:setDefaultTestingUrl',
+    #         'setDefaultTimeout=myHttp:setDefaultTimeout'
+    #     ]
+    # }
 )
 
