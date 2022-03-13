@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='myHttp',
-    version='1.1.1',
+    version='1.1.2',
     author='Tiancheng Jiao',
     author_email='jtc1246@outlook.com',
     url='https://github.com/jtc1246/myHttp',
@@ -11,14 +11,6 @@ setup(
     install_requires=['urllib3'],
     python_requires='>=3',
     platforms=["all"],
-    license='GPL-2.0 License',
-    # entry_points={
-    #     'console_scripts': [
-    #         'http=myHttp:http',
-    #         'testInternet=myHttp:testInternet',
-    #         'setDefaultTestingUrl=myHttp:setDefaultTestingUrl',
-    #         'setDefaultTimeout=myHttp:setDefaultTimeout'
-    #     ]
-    # }
+    license='GPL-2.0 License'
 )
 
