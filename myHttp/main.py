@@ -2,6 +2,11 @@ import urllib3
 import urllib3.exceptions as exceptions
 from .others import *
 
+
+import warnings
+warnings.filterwarnings("ignore")
+
+
 defaultTestingUrl='https://apple.com'
 useDefaultTestingUrl=True
 defaultTimeOut=2000
@@ -44,6 +49,8 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=None,ToJson:bool=Tr
         -3: 域名不存在 / Domian not exists
         -4: 其它问题, 主要是代理服务器设置错误 / Other problem, mainly proxy server error
         -5: 对方网站不支持 https, 但强制要求 https 链接 / The website does not support https, but you force https connection.
+        -6: 上传内容过大, 未上传完就 timeout / The content to be uploaded is too big, timeout happens when not uploaded completely.
+        -7: 下载内容超过内存大小 / Downloading content exceeds memory size.
 
         1: 不是 UTF-8 编码, text 返回空字符串 / Not UTF-8 encode, the return value of text will be empty str
         2: 不是 Json 格式(在 toJSON=True 的前提下) / Not in Json format (when toJSON=True)
@@ -95,7 +102,11 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=None,ToJson:bool=Tr
         if(tryAgain['status']==0):
             tryAgain['status']=3
         return tryAgain
-    except Exception: # 其它错误，主要为代理服务器设置错误，服务器上一般无此问题
+    except exceptions.ProtocolError:
+        return {'status':-6,'code':0,'text':text,'header':{},'extra':''}
+    except MemoryError:
+        return {'status':-7,'code':0,'text':text,'header':{},'extra':''}
+    except Exception as err: # 其它错误，主要为代理服务器设置错误，服务器上一般无此问题
         return {'status':-4,'code':0,'text':text,'header':{},'extra':''}
     # 以下是正常情况
     resp={}
