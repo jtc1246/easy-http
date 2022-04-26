@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='myHttp',
-    version='1.1.2',
+    version='1.1.3',
     author='Tiancheng Jiao',
     author_email='jtc1246@outlook.com',
     url='https://github.com/jtc1246/myHttp',
