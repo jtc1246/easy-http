@@ -5,7 +5,7 @@ from .others import *
 
 import warnings
 warnings.filterwarnings("ignore")
-
+http1=urllib3.PoolManager()
 
 defaultTestingUrl='https://apple.com'
 useDefaultTestingUrl=True
@@ -27,7 +27,7 @@ def testInternet():
     如果有网络连接, 返回 0; 如果没有网络连接, 返回 -1
     '''
     global defaultTestingUrl,useDefaultTestingUrl
-    http1=urllib3.PoolManager()
+    # http1=urllib3.PoolManager()
     dic={True:3,False:1}
     try:
         r=http1.request("GET",defaultTestingUrl,timeout=dic[useDefaultTestingUrl],retries=False)
@@ -61,7 +61,7 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=None,ToJson:bool=Tr
     backup=[url,Method,Header,Timeout,ToJson,Body,Decode,Retry]
     if(Timeout==None):
         Timeout=defaultTimeOut
-    http1=urllib3.PoolManager()
+    # http1=urllib3.PoolManager()
     r=0
     if(ToJson):
         text={}
