@@ -18,6 +18,8 @@
     -3: 域名不存在 / Domian not exists
     -4: 其它问题, 主要是代理服务器设置错误 / Other problem, mainly proxy server error
     -5: 对方网站不支持 https, 但强制要求 https 链接 / The website does not support https, but you force https connection.
+    -6: 上传内容过大, 未上传完就 timeout / The content to be uploaded is too big, timeout happens when not uploaded completely.
+    -7: 下载内容超过内存大小 / Downloading content exceeds memory size.
     1: 不是 UTF-8 编码, text 返回空字符串 / Not UTF-8 encode, the return value of text will be empty str
     2: 不是 Json 格式(在 toJSON=True 的前提下) / Not in Json format (when toJSON=True)
     3: 对方网站不支持https, 但是却使用了https连接, 这种情况会自动切换为http连接, 若此次status不为0, 返回该status, 若为0, 返回3
