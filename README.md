@@ -1,4 +1,4 @@
-# MyHttp v1.1.4
+# MyHttp v1.1.5
 
 ## 1. Usage / 使用方式
 
@@ -48,6 +48,5 @@
 
 ## 3. Other notification / 其它说明
 
-    Emial / 邮箱: jtc1246@outlook.com
     License: GPL v2
     Requirement / 要求: Python 3
