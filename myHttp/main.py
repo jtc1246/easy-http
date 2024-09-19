@@ -1,6 +1,7 @@
 import urllib3
 import urllib3.exceptions as exceptions
 from .others import *
+from urllib3.util import SKIP_HEADER
 
 
 import warnings
@@ -58,6 +59,10 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=None,ToJson:bool=Tr
         The website does not support https. It will change to http automatically in this situation. If the status this time is 0, the status will be 3. If not 0, it will return this status.
     '''
     global defaultTimeOut
+    if ('User-Agent' not in Header):
+        Header['User-Agent'] = SKIP_HEADER
+    if ('Accept-Encoding' not in Header):
+        Header['Accept-Encoding'] = SKIP_HEADER
     backup=[url,Method,Header,Timeout,ToJson,Body,Decode,Retry]
     if(Timeout==None):
         Timeout=defaultTimeOut
